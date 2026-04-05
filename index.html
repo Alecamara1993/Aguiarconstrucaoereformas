@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Aguiar Construção e Reforma | Responsivo</title>
+    <title>Aguiar Construção e Reforma | Responsivo Premium</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
@@ -37,14 +37,14 @@
         a { text-decoration: none; transition: var(--transition); }
         .container { width: 90%; max-width: 1200px; margin: 0 auto; }
 
-        /* --- HEADER RESPONSIVO --- */
+        /* --- HEADER --- */
         header {
             background: rgba(255, 255, 255, 0.98);
             padding: 15px 0; position: fixed; top: 0; width: 100%; z-index: 1000;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         header .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.3rem; color: var(--azul-premium); font-weight: 800; }
+        .logo { font-size: clamp(1rem, 4vw, 1.3rem); color: var(--azul-premium); font-weight: 800; }
         .logo span { color: var(--laranja-action); }
         
         nav ul { display: flex; gap: 20px; list-style: none; align-items: center; }
@@ -55,79 +55,93 @@
             min-height: 100vh;
             background: linear-gradient(135deg, rgba(0, 45, 90, 0.8) 0%, rgba(0, 26, 53, 0.7) 100%), 
                         url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=2000') no-repeat center center/cover;
-            display: flex; align-items: center; color: white; text-align: center; padding: 100px 20px;
+            display: flex; align-items: center; color: white; text-align: center; padding: 120px 20px 80px;
         }
-        .hero h1 { font-size: clamp(2rem, 8vw, 3.5rem); margin-bottom: 20px; line-height: 1.2; }
-        .hero p { font-size: clamp(1rem, 4vw, 1.2rem); max-width: 700px; margin: 0 auto 30px; }
+        .hero h1 { font-size: clamp(2.2rem, 10vw, 3.8rem); margin-bottom: 20px; line-height: 1.1; font-weight: 800; }
+        .hero p { font-size: clamp(1rem, 4vw, 1.2rem); max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
 
         /* --- GRID DE CARDS --- */
-        .section-padding { padding: 80px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; font-size: clamp(1.8rem, 5vw, 2.5rem); color: var(--azul-premium); }
+        .section-padding { padding: clamp(50px, 10vh, 100px) 0; }
+        .section-title { text-align: center; margin-bottom: clamp(30px, 8vh, 60px); font-size: clamp(1.8rem, 6vw, 2.8rem); color: var(--azul-premium); }
         
         .grid-cards { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
         }
 
         .card { 
-            background: white; padding: 30px; border-radius: 15px; 
-            text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            border: 1px solid #eee;
+            background: white; padding: 40px 30px; border-radius: 20px; 
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s ease;
         }
+        .card:hover { transform: translateY(-10px); }
 
         .icon-box { 
-            width: 70px; height: 70px; background: #f0f4f8; 
-            color: var(--azul-premium); border-radius: 50%; 
+            width: 80px; height: 80px; background: #f0f4f8; 
+            color: var(--azul-premium); border-radius: 20px; 
             display: flex; align-items: center; justify-content: center; 
-            font-size: 1.8rem; margin: 0 auto 20px; 
+            font-size: 2rem; margin: 0 auto 25px; 
         }
 
         /* --- BOTÕES --- */
         .btn {
             display: inline-flex; align-items: center; justify-content: center;
-            padding: 14px 30px; background: var(--laranja-action);
+            padding: 16px 35px; background: var(--laranja-action);
             color: white; font-weight: 700; border-radius: 50px; text-transform: uppercase;
-            font-size: 0.9rem; border: none; cursor: pointer;
+            font-size: 0.9rem; border: none; cursor: pointer; letter-spacing: 0.5px;
         }
+        .btn:hover { background: var(--laranja-hover); box-shadow: 0 5px 15px rgba(255, 122, 0, 0.3); }
 
         /* --- FORMULÁRIO --- */
         .contact-form-container {
-            max-width: 600px; margin: 0 auto; background: white; 
-            padding: 30px; border-radius: 20px; box-shadow: var(--shadow-medium);
+            max-width: 650px; margin: 0 auto; background: white; 
+            padding: clamp(20px, 5vw, 40px); border-radius: 25px; box-shadow: var(--shadow-medium);
         }
-        .form-group { margin-bottom: 15px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--azul-premium); }
         .form-group input, .form-group select, .form-group textarea {
-            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;
+            width: 100%; padding: 14px; border: 2px solid #eee; border-radius: 12px; font-size: 1rem;
+            font-family: inherit; transition: border-color 0.3s ease;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none; border-color: var(--laranja-action);
         }
 
         /* --- FOOTER --- */
-        footer { background: var(--azul-deep); color: white; padding: 50px 20px; text-align: center; }
-        .social-links { margin: 20px 0; display: flex; justify-content: center; gap: 20px; }
-        .social-links a { color: white; font-size: 1.5rem; }
+        footer { background: var(--azul-deep); color: white; padding: 60px 20px; text-align: center; }
+        .social-links { margin: 25px 0; display: flex; justify-content: center; gap: 25px; }
+        .social-links a { color: white; font-size: 1.8rem; opacity: 0.8; }
+        .social-links a:hover { opacity: 1; color: var(--laranja-action); }
 
         .whatsapp-fixed { 
-            position: fixed; bottom: 20px; right: 20px; 
-            width: 60px; height: 60px; background: #25D366; 
+            position: fixed; bottom: 25px; right: 25px; 
+            width: 65px; height: 65px; background: #25D366; 
             color: white; border-radius: 50%; display: flex; 
-            align-items: center; justify-content: center; font-size: 2rem; z-index: 999; 
+            align-items: center; justify-content: center; font-size: 2.2rem; z-index: 999; 
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
         }
 
-        /* --- MEDIA QUERIES (A MÁGICA DA RESPONSIVIDADE) --- */
+        /* --- RESPONSIVIDADE TOTAL --- */
         
-        /* Celulares (Menores que 768px) */
+        /* Mobile (Abaixo de 768px) */
         @media (max-width: 768px) {
-            header .btn { display: none; } /* Esconde o botão grande no topo para salvar espaço */
-            nav ul { gap: 10px; }
-            nav ul a { font-size: 0.75rem; }
-            .section-padding { padding: 50px 0; }
-            .grid-cards { grid-template-columns: 1fr; } /* Coluna única no celular */
+            header .btn { display: none; } 
+            nav ul { gap: 15px; }
+            .hero { padding-top: 80px; }
+            .grid-cards { grid-template-columns: 1fr; }
+            .card { padding: 30px 20px; }
         }
 
-        /* Tablets (Entre 769px e 1024px) */
+        /* Tablets e Notebooks Pequenos (769px a 1024px) */
         @media (min-width: 769px) and (max-width: 1024px) {
-            .grid-cards { grid-template-columns: repeat(2, 1fr); } /* Duas colunas no tablet */
+            .grid-cards { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* Desktop Grande */
+        @media (min-width: 1200px) {
+            .container { width: 100%; }
         }
     </style>
 </head>
@@ -141,17 +155,16 @@
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#metodo">Diferenciais</a></li>
-                    <li><a href="https://instagram.com/construcaoereforma_aguiar" target="_blank"><i class="fab fa-instagram"></i></a></li>
                 </ul>
             </nav>
-            <a href="#contato" class="btn" style="padding: 8px 15px; font-size: 0.7rem;">Orçamento</a>
+            <a href="#contato" class="btn" style="padding: 10px 20px; font-size: 0.75rem;">Orçamento Rápido</a>
         </div>
     </header>
 
     <section id="inicio" class="hero">
         <div class="container" data-aos="fade-up">
             <h1>Excelência em <br>Construção e Reforma</h1>
-            <p>Atuamos em todo o Rio de Janeiro com foco em alto padrão e transparência total.</p>
+            <p>Atuamos em todo o Rio de Janeiro com foco em alto padrão, engenharia técnica e transparência total.</p>
             <a href="#contato" class="btn">Iniciar Projeto</a>
         </div>
     </section>
@@ -160,20 +173,20 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Nossos Serviços</h2>
             <div class="grid-cards">
-                <div class="card" data-aos="zoom-in">
+                <div class="card" data-aos="fade-up">
                     <div class="icon-box"><i class="fas fa-home"></i></div>
                     <h3>Residencial</h3>
-                    <p>Reformas completas de apartamentos e casas.</p>
+                    <p>Reformas completas de apartamentos e casas com gestão de obra.</p>
                 </div>
-                <div class="card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
                     <div class="icon-box"><i class="fas fa-paint-roller"></i></div>
                     <h3>Acabamento</h3>
-                    <p>Pintura técnica e revestimentos finos.</p>
+                    <p>Pintura técnica, gesso e revestimentos de alto padrão.</p>
                 </div>
-                <div class="card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
                     <div class="icon-box"><i class="fas fa-bolt"></i></div>
                     <h3>Infraestrutura</h3>
-                    <p>Elétrica e hidráulica com normas técnicas.</p>
+                    <p>Projetos de elétrica e hidráulica seguindo normas da ABNT.</p>
                 </div>
             </div>
         </div>
@@ -184,14 +197,14 @@
             <h2 class="section-title">O Diferencial Aguiar</h2>
             <div class="grid-cards">
                 <div class="card">
-                    <i class="fas fa-check-circle" style="color: var(--laranja-action); font-size: 2rem;"></i>
+                    <i class="fas fa-check-circle" style="color: var(--laranja-action); font-size: 2.5rem; margin-bottom: 15px;"></i>
                     <h4>Transparência</h4>
-                    <p>Orçamentos detalhados sem surpresas.</p>
+                    <p>Orçamentos detalhados item por item, sem custos ocultos.</p>
                 </div>
                 <div class="card">
-                    <i class="fas fa-clock" style="color: var(--laranja-action); font-size: 2rem;"></i>
+                    <i class="fas fa-clock" style="color: var(--laranja-action); font-size: 2.5rem; margin-bottom: 15px;"></i>
                     <h4>Pontualidade</h4>
-                    <p>Cronogramas seguidos à risca.</p>
+                    <p>Respeito rigoroso ao cronograma estabelecido em contrato.</p>
                 </div>
             </div>
         </div>
@@ -203,22 +216,31 @@
             <div class="contact-form-container">
                 <form id="whatsappForm">
                     <div class="form-group">
-                        <label>Nome</label>
-                        <input type="text" id="nome" required>
+                        <label>Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Como podemos te chamar?" required>
                     </div>
                     <div class="form-group">
-                        <label>Serviço</label>
+                        <label>Tipo de Serviço</label>
                         <select id="servico">
-                            <option>Reforma Completa</option>
-                            <option>Pintura</option>
-                            <option>Reparos</option>
+                            <option value="Reforma Completa">Reforma Completa</option>
+                            <option value="Pintura e Acabamento">Pintura e Acabamento</option>
+                            <option value="Manutenção/Reparos">Manutenção e Reparos</option>
+                            <option value="Outros">Outros (Descrever abaixo)</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Mensagem</label>
-                        <textarea id="descricao" rows="3"></textarea>
+                        <label>Urgência do Projeto</label>
+                        <select id="urgencia">
+                            <option value="Imediata">Imediata</option>
+                            <option value="Para os próximos 30 dias">Próximos 30 dias</option>
+                            <option value="Apenas Planejamento">Apenas Planejamento / Cotação</option>
+                        </select>
                     </div>
-                    <button type="submit" class="btn" style="width: 100%;">Falar no WhatsApp</button>
+                    <div class="form-group">
+                        <label>Detalhes do Projeto</label>
+                        <textarea id="descricao" rows="4" placeholder="Conte um pouco sobre o que você precisa..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Enviar via WhatsApp</button>
                 </form>
             </div>
         </div>
@@ -226,24 +248,43 @@
 
     <footer>
         <div class="container">
-            <p>Aguiar Construção e Reforma</p>
-            <p>CNPJ: 33.124.973/0001-91</p>
+            <h3 style="margin-bottom: 10px;">Aguiar Construção e Reforma</h3>
+            <p style="opacity: 0.8;">Transformando ambientes com qualidade e confiança.</p>
+            <p style="margin-top: 5px; font-size: 0.8rem;">CNPJ: 33.124.973/0001-91</p>
             <div class="social-links">
                 <a href="https://instagram.com/construcaoereforma_aguiar" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://wa.me/5521979664223" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
+            <p style="font-size: 0.7rem; opacity: 0.5;">&copy; 2026 Aguiar Reformas. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <a href="https://wa.me/5521979664223" class="whatsapp-fixed" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://wa.me/5521979664223" class="whatsapp-fixed" target="_blank" aria-label="Falar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        // Inicialização das animações
+        AOS.init({ duration: 1000, once: true, disable: 'mobile' });
+
+        // Lógica do WhatsApp atualizada com o novo campo
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const texto = `Olá! Meu nome é ${document.getElementById('nome').value}. Quero orçamento para ${document.getElementById('servico').value}.`;
-            window.open(`https://wa.me/5521979664223?text=${encodeURIComponent(texto)}`, '_blank');
+            
+            const nome = document.getElementById('nome').value;
+            const servico = document.getElementById('servico').value;
+            const urgencia = document.getElementById('urgencia').value;
+            const desc = document.getElementById('descricao').value;
+            
+            const mensagem = `*Solicitação de Orçamento - Site*\n\n` +
+                             `*Nome:* ${nome}\n` +
+                             `*Serviço:* ${servico}\n` +
+                             `*Urgência:* ${urgencia}\n` +
+                             `*Detalhes:* ${desc}`;
+            
+            const url = `https://wa.me/5521979664223?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
         });
     </script>
 </body>
